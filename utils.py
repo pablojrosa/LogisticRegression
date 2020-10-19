@@ -7,9 +7,6 @@ class Utils:
 		
 		return pd.read_csv(path)
 
-	def load_from_mysql(self):
-		pass
-
 	def features_target(self, dataset, drop_columns, y):
 
 		X = dataset.drop(drop_columns, axis=1)

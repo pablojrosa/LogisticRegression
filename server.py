@@ -7,13 +7,13 @@ from flask import jsonify
 
 app = Flask(__name__)
 
-#POSTAMAN PARA PRUEBAS
 @app.route('/predict', methods = ['GET'])
 
 def predict():
-	X_test = np.array([51,0,2,120,295,0,0,157,0,0.6,2,0,1])
-
+	
+	X_test = np.array([71,0,0,112,149,0,1,125,0,1.6,1,0,2])
 	prediction = model.predict(X_test.reshape(1,-1))
+
 	return jsonify({'prediction': int(prediction)})
 
 

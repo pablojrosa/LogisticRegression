@@ -7,10 +7,8 @@ if __name__ == '__main__':
 	models = Models()
 
 	data = utils.load_from_csv('in/heart.csv')
-	data = data[data['chol'] < data.chol.quantile(0.95)].reset_index(drop=True)
 
-	print('pasa')
+	X , y = utils.features_target(data,['target'], ['target'])
 
-	X , y = utils.features_target(data,['thal'], ['thal'])
+	models.model_1(X,y)
 
-	models.grid_training(X,y)
